@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2019",
+    "module": "CommonJS",
+    "strict": true,
+    "esModuleInterop": true, 
+    "forceConsistentCasingInFileNames": true,
+    "sourceMap": true,
+  },
+  "include": [
+    "./jest.config.js",
+    "./src/**/*",
+    "./test/**/*",
+  ]
+}
