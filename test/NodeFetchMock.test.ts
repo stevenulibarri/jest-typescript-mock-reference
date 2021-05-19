@@ -23,6 +23,9 @@ describe('mock node-fetch example', () => {
 
     expect(result).toBeDefined();
     expect(result.data).toBe('good request');
+
+    expect(mockFetch).toHaveBeenCalledTimes(1);
+    expect(mockFetch.mock.calls[0][0]).toBe('https://someEndpoint.com/');
   });
 
   test('500', async () => {
@@ -44,6 +47,9 @@ describe('mock node-fetch example', () => {
     expect(expectedError).toBeDefined();
     expect(expectedError instanceof Error).toBe(true);
     expect(expectedError?.message).toBe('bad request');
+
+    expect(mockFetch).toHaveBeenCalledTimes(1);
+    expect(mockFetch.mock.calls[0][0]).toBe('https://someEndpoint.com/');
   });
 
 });
