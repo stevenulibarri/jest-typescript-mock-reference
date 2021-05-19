@@ -7,6 +7,6 @@ export class DbConnector {
   constructor(private connectionString: string) {}
 
   async query(query: string): Promise<string[]> {
-    return ['some', 'data'];
+    return Promise.resolve(['some', 'data']);
   }
 }

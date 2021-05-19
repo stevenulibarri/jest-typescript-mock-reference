@@ -3,13 +3,11 @@ import { DbConnector } from '../src/DbConnector';
 
 jest.mock('../src/DbConnector');
 
-describe('DataRepository', () => {
-  
+describe('general class dependency mock example', () => {
+
   test('mock', async () => {
-    // note usage of jest.Mocked vs jest.Mock
-    // jest.Mocked enables type inference for the class methods
-    // as jest.Mock is so the checker won't complain about missing constructor args
-    const mockDbConnector: jest.Mocked<DbConnector> = new (DbConnector as jest.Mock)();
+    // cast to <any> so checker won't complain about missing constructor args
+    const mockDbConnector = new (<any>DbConnector)() as jest.Mocked<DbConnector>;
     const repo: IDataRepository = new DataRepository(mockDbConnector);
 
     // autocomplete actually works here! and the return type is enforced!

@@ -9,6 +9,8 @@
   },
   "include": [
     "./jest.config.js",
+    "./.eslintrc.js",
+    "./test/.eslintrc.js",
     "./src/**/*",
     "./test/**/*",
   ]

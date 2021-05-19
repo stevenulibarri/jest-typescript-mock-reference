@@ -10,5 +10,5 @@ export class DataRepository implements IDataRepository {
   async getDataById(id: number): Promise<string[]> {
     const result: string[] = await this.dbConnector.query(`SELECT ${id} FROM THE DB LOL`);
     return result;
-  } 
+  }
 }
