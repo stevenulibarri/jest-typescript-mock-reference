@@ -11,7 +11,8 @@ describe('mock node-fetch example', () => {
     jest.clearAllMocks();
   });
 
-  test('200', async () => {
+  // res.status >= 200 && res.status < 300
+  test('res.ok', async () => {
     const adapter = new ApiAdapter();
 
     mockFetch.mockResolvedValue(<fetch.Response> {
@@ -28,7 +29,8 @@ describe('mock node-fetch example', () => {
     expect(mockFetch.mock.calls[0][0]).toBe('https://someEndpoint.com/');
   });
 
-  test('500', async () => {
+  // res.status >= 300
+  test('!res.ok', async () => {
     const adapter = new ApiAdapter();
 
     mockFetch.mockResolvedValue(<fetch.Response> {

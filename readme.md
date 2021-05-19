@@ -1,8 +1,5 @@
-# typesafe jest class mock example
-
-Mocking classes with types in jest is really annoying.  
-This is the simplest way I've been able to make it work without any additional dependencies aside from ts-jest.
-
+# jest-typescript-mock-reference
+Some reference examples of typed jest mocks without additional mocking frameworks.  
 
 ### Run
 `npm install`  
