@@ -6,8 +6,10 @@ jest.mock('../src/DbConnector');
 describe('general class dependency mock example', () => {
 
   test('mock', async () => {
-    // cast to <any> so checker won't complain about missing constructor args
-    const mockDbConnector = new (<any>DbConnector)() as jest.Mocked<DbConnector>;
+    // cast to parameter-less constructor so tsc doesn't care about the missing args
+    const mockDbConnector = new (<new () => DbConnector>DbConnector)() as jest.Mocked<DbConnector>;
+    // you can also cast to <any>, its shorter but depending on your lint config might not be allowed
+    // const mockDbConnector = new (<any>DbConnector)() as jest.Mocked<DbConnector>;
     const repo: IDataRepository = new DataRepository(mockDbConnector);
 
     // autocomplete actually works here! and the return type is enforced!
