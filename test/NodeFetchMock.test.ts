@@ -3,7 +3,7 @@ import * as fetch from 'node-fetch';
 
 jest.mock('node-fetch');
 
-const mockFetch = fetch.default as jest.MockedFunction<typeof fetch.default>;
+const mockFetch = jest.mocked<typeof fetch.default>(fetch.default);
 
 describe('mock node-fetch example', () => {
 
