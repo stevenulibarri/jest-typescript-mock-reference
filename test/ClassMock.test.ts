@@ -21,10 +21,5 @@ test('gets data', async () => {
 
   const result = await instance.getSomeData(1);
   expect(result).toBe('mocked data');
+  expect(mockedApiClient.getDataFromApi).toHaveBeenCalledWith(1);
 });
-
-
-
-
-
-
